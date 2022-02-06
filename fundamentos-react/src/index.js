@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import PrimeiroComponente from './components/basicos/PrimeiroComponente'
 import ComParametro from './components/basicos/ComParametro'
+import Fragmento from './components/basicos/Fragmento'
 
 const divPai = document.querySelector('#root')
 
@@ -19,6 +20,7 @@ ReactDOM.render(
       aluno="Pedro" 
       nota={3.3}>
     </ComParametro>
+    <Fragmento></Fragmento>
   </h1>,
 
   divPai
