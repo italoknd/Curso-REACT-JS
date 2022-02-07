@@ -3,8 +3,12 @@ import './card.css'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
+  const style = {
+    backgroundColor: props.color,
+  }
+
   return (
-    <div  className='card'>
+    <div  className='card' style={style}>
       <div className='title'>{props.titulo}</div>
       <div className='content'>
         {props.children}
