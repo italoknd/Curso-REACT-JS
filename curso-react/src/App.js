@@ -8,6 +8,9 @@ import Evento from './components/Evento'
 import Form from './components/Form'
 import Condicional from './components/Condicional'
 import ListaDeRender from './components/ListaDeRender'
+import StateLift from './components/StateLift'
+import {useState} from 'react'
+import Saudacao from './components/Saudacao'
 
 function App() {
   const name = 'Italo'
@@ -22,6 +25,8 @@ function App() {
   const nome = 'Maria'
 
   const meusItens = ['React', 'Vue', 'Angular'];
+
+  const [userName, setUserName] = useState();
 
   return (
     <div className="App">
@@ -54,6 +59,9 @@ function App() {
 
       <ListaDeRender itens={meusItens}/>
       <ListaDeRender itens/>
+
+      <StateLift setUserName={setUserName}/>
+      <Saudacao userName={userName}/>
     </div>
   )
 }
