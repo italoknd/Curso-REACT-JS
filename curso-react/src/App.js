@@ -12,6 +12,11 @@ import StateLift from './components/StateLift'
 import {useState} from 'react'
 import Saudacao from './components/Saudacao'
 
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+// // import Empresa from './pages/Empresa'
+// // import Contato from './pages/Contato'
+
 function App() {
   const name = 'Italo'
   const newName = name.toUpperCase()
@@ -62,6 +67,32 @@ function App() {
 
       <StateLift setUserName={setUserName}/>
       <Saudacao userName={userName}/>
+
+      <Router>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/empresa">Empresa</Link>
+          </li>
+          <li>
+            <Link to="/contato">Contato</Link>
+          </li>
+        </ul>
+
+        <Routes>
+          <Route exact path="/" element={<Home />}>
+            
+          </Route>
+          {/* <Route path="/empresa" element={<Empresa />}>
+            
+          </Route>
+          <Route path="/contato" element={<Contato />}>
+            
+          </Route> */}
+        </Routes>
+      </Router>
     </div>
   )
 }
