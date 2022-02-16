@@ -7,6 +7,7 @@ import List from './components/List'
 import Evento from './components/Evento'
 import Form from './components/Form'
 import Condicional from './components/Condicional'
+import ListaDeRender from './components/ListaDeRender'
 
 function App() {
   const name = 'Italo'
@@ -19,6 +20,8 @@ function App() {
   }
 
   const nome = 'Maria'
+
+  const meusItens = ['React', 'Vue', 'Angular'];
 
   return (
     <div className="App">
@@ -48,6 +51,9 @@ function App() {
       <Form />
 
       <Condicional />
+
+      <ListaDeRender itens={meusItens}/>
+      <ListaDeRender itens/>
     </div>
   )
 }
