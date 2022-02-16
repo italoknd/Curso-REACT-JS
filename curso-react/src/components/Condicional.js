@@ -11,6 +11,11 @@ function Condicional(props){
     setUserEmail(email);
   }
 
+  function limparEmail(e){
+    e.preventDefault();
+    setUserEmail('');
+  }
+
   return(
     <div>
       <h2>Cadastre o seu email:</h2>
@@ -18,6 +23,12 @@ function Condicional(props){
         <label htmlFor="email">E-mail: </label>
         <input type="email" placeholder="Digite o seu e-mail" onChange={(e) => setEmail(e.target.value)}/>
         <button type="submit" onClick={enviarEmail}>Enviar</button>
+        {userEmail && (
+          <div>
+            <p>O e-mail do usuário é:  {userEmail}</p>
+            <button onClick={limparEmail}>Limpar e-mail</button>
+          </div>
+        )}
       </form>
     </div>
   )
