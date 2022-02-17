@@ -1,0 +1,15 @@
+footer{
+  display: flex;
+  justify-content: center;
+}
+
+li{
+  list-style: none;
+  margin-right: 1.5em;
+}
+
+.icons{
+  padding: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}

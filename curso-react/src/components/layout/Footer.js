@@ -1,6 +1,20 @@
-function Footer(){
+import './Footer.css'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
-  return <footer><h1>Rodapé</h1></footer>
+function Footer() {
+  return (
+    <footer>
+      <li className='icons'>
+        <FaFacebook />
+      </li>
+      <li  className='icons'>
+        <FaInstagram />
+      </li>
+      <li  className='icons'>
+        <FaLinkedin />
+      </li>
+    </footer>
+  )
 }
 
-export default Footer;
+export default Footer
