@@ -14,8 +14,10 @@ import Saudacao from './components/Saudacao'
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
-// // import Empresa from './pages/Empresa'
-// // import Contato from './pages/Contato'
+import Empresa from './pages/Empresa'
+import Contato from './pages/Contato'
+import NavBar from './components/layout/NavBar'
+import Footer from './components/layout/Footer'
 
 function App() {
   const name = 'Italo'
@@ -68,30 +70,15 @@ function App() {
       <StateLift setUserName={setUserName}/>
       <Saudacao userName={userName}/>
 
+      <h1>React Router:</h1>
       <Router>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/empresa">Empresa</Link>
-          </li>
-          <li>
-            <Link to="/contato">Contato</Link>
-          </li>
-        </ul>
-
+        <NavBar />
         <Routes>
-          <Route exact path="/" element={<Home />}>
-            
-          </Route>
-          {/* <Route path="/empresa" element={<Empresa />}>
-            
-          </Route>
-          <Route path="/contato" element={<Contato />}>
-            
-          </Route> */}
-        </Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/empresa" element={<Empresa />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes> 
+        <Footer />
       </Router>
     </div>
   )
