@@ -1,9 +1,11 @@
+import './index.css'
 import ReactDOM from 'react-dom'
 import React from 'react'
+import Primeiro from './components/basicos/Primeiro'
+import ComParametro from './components/basicos/ComParametro'
 
 //para renderizar um exemplo, comente os que você não deseja exibir
 //não é possível renderizar mais de um exemplo utilizando a mesma const el
-
 
 
 
@@ -28,3 +30,16 @@ ReactDOM.render(
   </div>,
   el
 )
+
+//ex 4 renderizando componente
+// ReactDOM.render(
+//   <div>
+//     <Primeiro/>
+//     <ComParametro
+//       situacao="Situação do Aluno:"
+//       aluno="Italo"
+//       nota={9.3}
+//     />
+//   </div>,
+//   el
+// )
