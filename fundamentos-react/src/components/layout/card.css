@@ -1,0 +1,19 @@
+.card{
+  background-color: red;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.title{
+  background-color: red;
+  border: 3px solid red;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  background-color: white;
+  color: #2a2a2a;
+  padding: 20px;
+}
