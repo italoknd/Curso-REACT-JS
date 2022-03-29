@@ -1,13 +1,10 @@
 import './index.css'
 import ReactDOM from 'react-dom'
 import React from 'react'
-import Primeiro from './components/basicos/Primeiro'
-import ComParametro from './components/basicos/ComParametro'
+import App from './App'
 
 //para renderizar um exemplo, comente os que você não deseja exibir
 //não é possível renderizar mais de um exemplo utilizando a mesma const el
-
-
 
 //ex 1 jsx
 const el = document.getElementById('root')
@@ -24,22 +21,12 @@ ReactDOM.render(
 //ex 3 jsx
 const msg = <p>Olá, JSX!</p>
 
+ReactDOM.render(<div>{msg}</div>, el)
+
+//ex 4 renderizando componente
 ReactDOM.render(
   <div>
-    { msg }
+    <App />
   </div>,
   el
 )
-
-//ex 4 renderizando componente
-// ReactDOM.render(
-//   <div>
-//     <Primeiro/>
-//     <ComParametro
-//       situacao="Situação do Aluno:"
-//       aluno="Italo"
-//       nota={9.3}
-//     />
-//   </div>,
-//   el
-// )
