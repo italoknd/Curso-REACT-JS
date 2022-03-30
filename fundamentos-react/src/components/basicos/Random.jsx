@@ -6,7 +6,7 @@ let random = Math.random() * (maxNum - minNum) + minNum;
 
   return(
     <div>
-      <h1>DESAFIO: Número aleatorio</h1>
+      <h1>DESAFIO: Número aleatorio.</h1>
       <p>Abaixo será exibido um número aleatório entre {maxNum} e {minNum}</p>
       <p>{random.toFixed(2)}</p>
     </div>
