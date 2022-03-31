@@ -7,4 +7,4 @@ export default function FamiliaMembro({nome, sobrenome, idade}){
       <p>{nome} <strong>{sobrenome} {idade}</strong></p>
     </div>
   )
-}
+} 
