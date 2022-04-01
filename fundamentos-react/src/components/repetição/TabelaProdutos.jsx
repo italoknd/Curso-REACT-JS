@@ -4,15 +4,8 @@ import produtos from '../../data/produtos'
 export default function TabelaProduto() {
   const listaProdutos = produtos.map(produtos => {
     return (
-      <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">ID:</th>
-              <th scope="col">Nome:</th>
-              <th scope="col">Preço:</th>
-            </tr>
-          </thead>
+      <div key={produtos.id}>
+        <table className="table">
           <tbody>
             <tr>
               <th scope="row">{produtos.id}</th>
@@ -27,6 +20,15 @@ export default function TabelaProduto() {
 
   return (
     <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">ID:</th>
+            <th scope="col">Nome:</th>
+            <th scope="col">Preço:</th>
+          </tr>
+        </thead>
+      </table>
       {listaProdutos}
     </div>
   )
