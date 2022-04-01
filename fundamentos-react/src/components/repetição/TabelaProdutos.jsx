@@ -2,15 +2,15 @@ import React from 'react'
 import produtos from '../../data/produtos'
 
 export default function TabelaProduto() {
-  const listaProdutos = produtos.map(produtos => {
+  const listaProdutos = produtos.map(produto => {
     return (
-      <div key={produtos.id}>
+      <div key={produto.id}>
         <table className="table">
           <tbody>
             <tr>
-              <th scope="row">{produtos.id}</th>
-              <td>{produtos.nome}</td>
-              <td>{produtos.preco}</td>
+              <th scope="row">{produto.id}</th>
+              <td>{produto.nome}</td>
+              <td>R$ {produto.preco.toFixed(2).replace('.', ',')}</td>
             </tr>
           </tbody>
         </table>
