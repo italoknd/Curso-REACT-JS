@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {id: 1, nome: "Leite em Pó", preco: 10.99},
   {id: 2, nome: "Sabão em Pó", preco: 8.99},
