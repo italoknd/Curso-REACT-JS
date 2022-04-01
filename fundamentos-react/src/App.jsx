@@ -7,12 +7,17 @@ import Card from './components/layout/Card'
 import Familia from './components/basicos/Familia'
 import FamiliaMembro from './components/basicos/FamiliaMembro'
 import ListaAlunos from './components/repetição/ListaAlunos'
+import TabelaProduto from './components/repetição/TabelaProdutos'
 
 export default function App() {
   return (
     <div>
       <h1>Fundamentos React</h1>
       <div className="cards-container">
+        
+        <Card titulo="06 - Desafio Lista de Produtos" color="#F70">
+          <TabelaProduto></TabelaProduto>
+        </Card>
         <Card titulo="05 - Renderização de Listas" color="#0D6">
           <ListaAlunos></ListaAlunos>
         </Card>
