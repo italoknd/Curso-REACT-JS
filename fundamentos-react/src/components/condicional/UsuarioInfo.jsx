@@ -1,5 +1,5 @@
 import React from 'react'
-import If from '../condicional/If'
+import If, { Else } from '../condicional/If'
 
 export default function UsuarioInfo(props) {
   const usuario = props.usuario.nome || {}
@@ -17,17 +17,21 @@ export default function UsuarioInfo(props) {
       {/* teste 2 */}
       <If test={usuario && props.usuario.email}>
         <h4>E-mail</h4>
-        <p>
-          Seja bem vindo <strong>{props.usuario.email}</strong>!
-        </p>
+        <Else>
+          <p>
+            Seja bem vindo <strong>{props.usuario.email}</strong>!
+          </p>
+        </Else>
       </If>
 
       {/* teste 3 */}
       <If test={!usuario && (!props.usuario.nome || !props.usuario.email)}>
         <h4>E-mail</h4>
-        <p>
-          Seja bem vindo <strong>Guest</strong>!
-        </p>
+        <Else>
+          <p>
+            Seja bem vindo <strong>Guest</strong>!
+          </p>
+        </Else>
       </If>
     </div>
   )
