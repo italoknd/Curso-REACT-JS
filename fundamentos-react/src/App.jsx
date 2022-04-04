@@ -12,12 +12,16 @@ import ParOuImpar from './components/condicional/ParOuImpar'
 import UsuarioInfo from './components/condicional/UsuarioInfo'
 import DiretaPai from './components/comunicação/DiretaPai'
 import IndiretaPai from './components/comunicação/IndiretaPai'
+import Input from './components/formulario/Input'
 
 export default function App() {
   return (
     <div>
       <h1>Fundamentos React</h1>
       <div className="cards-container">
+        <Card titulo="10 - Componente Controlado (Input)" color="#91F">
+          <Input></Input>
+        </Card>
         <Card titulo="09 - Comunicação Indireta" color="#339">
           <IndiretaPai></IndiretaPai>
         </Card>
