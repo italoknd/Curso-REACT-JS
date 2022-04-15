@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import Display from './Display'
+import PassoForm from '../contador/PassoForm'
+import Botoes from './Botoes'
 import './contador.css'
 
 export default class Contador extends Component {
@@ -31,9 +34,9 @@ export default class Contador extends Component {
     })
   }
 
-  setPasso = e => {
+  setPasso = novoPasso => {
     this.setState({
-      passo: +e.target.value //o + serve para converter o valor de string pra number
+      passo: novoPasso
     })
   }
 
@@ -41,21 +44,17 @@ export default class Contador extends Component {
     return (
       <div>
         <h1>Contador</h1>
-        <h3>{this.state.numero}</h3>
-        <div className='input-area'>
-          <label htmlFor="">Passo:</label>
-          <input
-            type="number"
-            value={this.state.passo}
-            onChange={this.setPasso}
-          />
-        </div>
-        <div>
-          <button className='button' onClick={this.incremento}>+</button>
-          <button className='button' onClick={this.decremento}>-</button>
-          <button className='button' onClick={this.multiploInc}>M+</button>
-          <button className='button' onClick={this.multiploDec}>M-</button>
-        </div>
+        <Display numero={this.state.numero}/>
+        <PassoForm 
+          passo={this.state.passo}
+          setPasso={this.setPasso}  
+        />
+        <Botoes 
+          incremento={this.incremento}
+          decremento={this.decremento}
+          multiploInc={this.multiploInc}
+          multiploDec={this.multiploDec}
+        />
       </div>
     )
   }

@@ -1,0 +1,3 @@
+function gerarNumero(numeros){
+  return
+}

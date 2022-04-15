@@ -14,16 +14,18 @@ import DiretaPai from './components/comunicação/DiretaPai'
 import IndiretaPai from './components/comunicação/IndiretaPai'
 import Input from './components/formulario/Input'
 import Contador from './components/contador/Contador'
+import Mega from './components/mega/Mega'
 
 export default function App() {
   return (
     <div>
       <h1>Fundamentos React</h1>
       <div className="cards-container">
+        <Card titulo="12 - Mega" color="#0A7">
+          <Mega />
+        </Card>
         <Card titulo="11 - Contador" color="#91F">
-          <Contador
-            numeroInicial={10}  
-          />
+          <Contador numeroInicial={10} />
         </Card>
         <Card titulo="10 - Componente Controlado" color="#777">
           <Input></Input>
