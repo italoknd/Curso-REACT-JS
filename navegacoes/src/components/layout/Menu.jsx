@@ -13,6 +13,12 @@ function Menu() {
           <li>
             <Link to="/about">About</Link>
           </li>
+          <li>
+            <Link to="/param/legal">Param #01</Link>
+          </li>
+          <li>
+            <Link to="/param/123">Param #02</Link>
+          </li>
         </ul>
       </nav>
     </aside>
