@@ -5,12 +5,12 @@ import Content from './components/layout/Content'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <Menu />
         <Content />
-      </div>
-    </Router>
+      </Router>
+    </div>
   )
 }
 

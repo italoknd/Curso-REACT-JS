@@ -2,9 +2,9 @@ import React from "react";
 
 function About(){
   return(
-    <aside className="About">
-      Sobre a aplicação
-    </aside>
+    <div className="About">
+      <h1>Sobre a aplicação</h1>
+    </div>
   )
 }
 
