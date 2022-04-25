@@ -7,7 +7,7 @@ function calcFactorial(n) {
     return 'Não existe fatorial de número menor que 0.'
   }
 
-  if (n == 0) {
+  if (n === 0) {
     return 1
   }
 
