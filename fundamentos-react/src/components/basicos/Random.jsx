@@ -10,8 +10,7 @@ export default function Random({ maxNum, minNum }) {
       <h5>Desafio Número Aleatório:</h5>
       {randomNum}
       <button
-        className="btn btn-primary d-flex mt-2"
-        style={{ margin: 'auto' }}
+        className="btn btn-primary d-flex mt-2 m-auto"
         onClick={() =>
           newRandomNum(Math.floor(Math.random() * maxNum - minNum + 1) + minNum)
         }
