@@ -1,4 +1,3 @@
-import './app.css'
 import React from 'react'
 import Primeiro from './components/basicos/Primeiro'
 import ComParametro from './components/basicos/ComParametro'
@@ -15,6 +14,8 @@ import IndiretaPai from './components/comunicação/IndiretaPai'
 import Input from './components/formulario/Input'
 import Contador from './components/contador/Contador'
 import Mega from './components/mega/Mega'
+
+import './app.css'
 
 export default function App() {
   return (
@@ -55,7 +56,7 @@ export default function App() {
           </Familia>
         </Card>
         <Card titulo="03 - Random Number Challenge" color="#A2A">
-          <Random maxNum={3} minNum={7} />
+          <Random maxNum={100} minNum={1} />
         </Card>
         <Card titulo="02 - Com Parametro">
           <ComParametro

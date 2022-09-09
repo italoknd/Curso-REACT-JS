@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function Random({maxNum, minNum}){
-  
-let random = Math.random() * (maxNum - minNum) + minNum;
+export default function Random({ maxNum, minNum }) {
+  const [randomNum, newRandomNum] = useState(
+    Math.floor(Math.random() * maxNum - minNum + 1) + minNum
+  )
 
-  return(
+  return (
     <div>
-      <h1>DESAFIO: Número aleatorio.</h1>
-      <p>Abaixo será exibido um número aleatório entre {maxNum} e {minNum}</p>
-      <p>{random.toFixed(2)}</p>
+      <h5>Desafio Número Aleatório:</h5>
+      {randomNum}
+      <button
+        className="btn btn-primary d-flex mt-2"
+        style={{ margin: 'auto' }}
+        onClick={() =>
+          newRandomNum(Math.floor(Math.random() * maxNum - minNum + 1) + minNum)
+        }
+      >
+        Gerar Novo Número
+      </button>
     </div>
   )
 }
