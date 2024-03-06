@@ -1,10 +1,11 @@
 import { INumeroAleatorio } from "../../interfaces/basicos-interface/numeroAleatorio.ts";
+import { useState } from "react";
 
 const NumeroAleatorio = ({ max_num, min_num }: INumeroAleatorio) => {
-  let numero_sorteado: number;
+  const [numero_sorteado, set_numero_sorteado] = useState(0);
   const gerarNumeroRandomico: number = () => {
-    numero_sorteado = Math.floor(
-      Math.random() * max_num - Math.random() * min_num
+    set_numero_sorteado(
+      Math.floor(Math.random() * (max_num - min_num + 1) + min_num)
     );
   };
 
