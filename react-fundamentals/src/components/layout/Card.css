@@ -1,0 +1,22 @@
+.card {
+  background-color: red;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid red;
+  margin: 1%;
+
+  & .title {
+    background-color: red;
+    padding: 5px 0;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  & .content {
+    background-color: white;
+    color: #222;
+    padding: 20px;
+    height: 100%;
+  }
+}
