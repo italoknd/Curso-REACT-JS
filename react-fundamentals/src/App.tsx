@@ -6,12 +6,28 @@ import NumeroAleatorio from "./components/basicos/NumeroAleatorio.jsx";
 
 function App() {
   return (
-    <div className="containers">
+    <div className="cards-container">
       <Card titulo="Desafio Número Aleatório">
         <NumeroAleatorio max_num={100} min_num={1} />
       </Card>
       <Card titulo="Primeiro Contato">
         <Primeiro />
+      </Card>
+      <Card titulo="Trabalhando Com Props">
+        <Props
+          titulo="Segundo Componente"
+          subtitulo="Criatividade Máxima!"
+          nota={6.78}
+          aluno="Italo Pedroza"
+        />
+      </Card>
+      <Card titulo="Trabalhando Com Props">
+        <Props
+          titulo="Segundo Componente"
+          subtitulo="Criatividade Máxima!"
+          nota={6.78}
+          aluno="Italo Pedroza"
+        />
       </Card>
       <Card titulo="Trabalhando Com Props">
         <Props

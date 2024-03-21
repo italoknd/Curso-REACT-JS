@@ -4,6 +4,7 @@
   overflow: hidden;
   border: 2px solid red;
   margin: 1%;
+  width: 300px;
 
   & .title {
     background-color: red;
