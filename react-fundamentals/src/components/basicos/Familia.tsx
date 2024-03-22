@@ -1,10 +1,12 @@
-import React from "react";
-import FamiliaMembro from "./FamiliaMembro";
+import React, { cloneElement } from "react";
+import { IDadosUsuario } from "../../interfaces/basicos-interface/basico";
 
-const Familia = () => {
+const Familia: React.FC<IDadosUsuario> = props => {
   return (
     <>
-      <FamiliaMembro />
+      {React.Children.map(props.children, (child, index) => {
+        return cloneElement(child, { ...props, key: index });
+      })}
     </>
   );
 };
