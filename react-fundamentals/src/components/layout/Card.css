@@ -1,13 +1,10 @@
 .card {
-  background-color: red;
   border-radius: 6px;
   overflow: hidden;
-  border: 2px solid red;
   margin: 1%;
   width: 300px;
 
   & .title {
-    background-color: red;
     padding: 5px 0;
 
     display: flex;
@@ -19,5 +16,6 @@
     color: #222;
     padding: 20px;
     height: 100%;
+    border-radius: 3px;
   }
 }
