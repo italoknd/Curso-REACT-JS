@@ -4,12 +4,17 @@ import Primeiro from "./components/basicos/Primeiro.jsx";
 import Props from "./components/basicos/Props.jsx";
 import NumeroAleatorio from "./components/basicos/NumeroAleatorio.jsx";
 import Familia from "./components/basicos/Familia.jsx";
+import FamiliaMembro from "./components/basicos/FamiliaMembro.jsx";
 
 function App() {
   return (
     <div className="cards-container">
       <Card titulo="Componentes Com Filhos" color="#e42">
-        <Familia  />
+        <Familia sobrenome="Pedroza">
+          <FamiliaMembro nome="Italo" />
+          <FamiliaMembro nome="Daniel" />
+          <FamiliaMembro nome="Hugo" />
+        </Familia>
       </Card>
       <Card titulo="Desafio Número Aleatório" color="#2B6">
         <NumeroAleatorio max_num={100} min_num={1} />
