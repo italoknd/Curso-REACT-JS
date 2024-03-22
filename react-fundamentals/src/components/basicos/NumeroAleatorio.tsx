@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const NumeroAleatorio = ({ max_num, min_num }: INumeroAleatorio) => {
   const [numero_sorteado, set_numero_sorteado] = useState(0);
-  const gerarNumeroRandomico: number = () => {
+  const gerarNumeroRandomico = (): void => {
     set_numero_sorteado(
       Math.floor(Math.random() * (max_num - min_num + 1) + min_num)
     );
