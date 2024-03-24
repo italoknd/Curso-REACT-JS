@@ -1,6 +1,4 @@
 import React from "react";
-import "./ListaAlunos.css";
-
 import dataAlunos from "../../data/alunos";
 import { IAluno } from "../../interfaces/basicos-interface/basico";
 
@@ -17,7 +15,7 @@ const listaAlunos = (props) => {
           </tr>
         </thead>
         <tbody>
-          <tr className="tdata">
+          <tr>
             {alunos.map((aluno: IAluno, index) => {
               return (
                 <td key={index}>

@@ -1,6 +1,7 @@
 import React from "react"
 import produtos from "../../data/produtos"
-import {formaMonetaryValue} from "../../utils/formatMonetaryValue"
+import { formaMonetaryValue } from "../../utils/formatMonetaryValue"
+import "../repeticao/ListaProdutos.css"
 
 const listaProdutos = () => {
     return (
@@ -17,7 +18,7 @@ const listaProdutos = () => {
                     {
                         produtos.map(produto => {
                             return (
-                                <tr key={produto.id}>
+                                <tr className="tdata" key={produto.id}>
                                     <td>{produto.id}</td>
                                     <td>{produto.nome}</td>
                                     <td>{formaMonetaryValue(Number(produto.valor))}</td>
