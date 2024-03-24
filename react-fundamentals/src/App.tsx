@@ -6,10 +6,14 @@ import NumeroAleatorio from "./components/basicos/NumeroAleatorio.jsx";
 import Familia from "./components/basicos/Familia.jsx";
 import FamiliaMembro from "./components/basicos/FamiliaMembro.jsx";
 import ListaAlunos from "./components/repeticao/ListaAlunos";
+import ListaProdutos from "./components/repeticao/ListaProdutos";
 
 function App() {
   return (
     <div className="cards-container">
+      <Card titulo="Desafio Lista de Produtos" color="#3c9">
+        <ListaProdutos />
+      </Card>
       <Card titulo="Repetição" color="#b2f">
         <ListaAlunos />
       </Card>
