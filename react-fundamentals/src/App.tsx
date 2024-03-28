@@ -7,10 +7,18 @@ import Familia from "./components/basicos/Familia.jsx";
 import FamiliaMembro from "./components/basicos/FamiliaMembro.jsx";
 import ListaAlunos from "./components/repeticao/ListaAlunos";
 import ListaProdutos from "./components/repeticao/ListaProdutos";
+import ParOuImpar from "./components/condicionais/ParOuImpar.jsx";
+import ChildrenRender from "./components/condicionais/ChildrenRender.jsx";
 
 function App() {
   return (
     <div className="cards-container">
+      <Card titulo="Condicionais Parte 2" color="#329">
+        <ChildrenRender />
+      </Card>
+      <Card titulo="Condicionais Parte 1 - Impar ou Par" color="#329">
+        <ParOuImpar numero={9} />
+      </Card>
       <Card titulo="Desafio Lista de Produtos" color="#3c9">
         <ListaProdutos />
       </Card>
