@@ -9,10 +9,14 @@ import ListaAlunos from "./components/repeticao/ListaAlunos";
 import ListaProdutos from "./components/repeticao/ListaProdutos";
 import ParOuImpar from "./components/condicionais/ParOuImpar.jsx";
 import ChildrenRender from "./components/condicionais/ChildrenRender.jsx";
+import IndiretaPai from "./components/comunicacao/IndiretaPai.jsx";
 
 function App() {
   return (
     <div className="cards-container">
+      <Card titulo="Comunicação Indireta" color="#b91">
+        <IndiretaPai />
+      </Card>
       <Card titulo="Condicionais Parte 2" color="#329">
         <ChildrenRender />
       </Card>
