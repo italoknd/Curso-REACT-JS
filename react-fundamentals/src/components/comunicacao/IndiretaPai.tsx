@@ -3,15 +3,18 @@ import IndiretaFilho from "./IndiretaFilho";
 import { IDadosUsuario } from "../../interfaces/basicos-interface/basico";
 
 const IndiretaPai = props => {
-  const [dadosUsuario, setDadosUsuario] = useState(null);
+  const [nome, setNome]= useState<string>("")
+  const [idade, setIdade]= useState<string>("")
 
   const fornecerInformacoesDoUsuario = (dadosUsuario: IDadosUsuario) => {
-    setDadosUsuario(() => dadosUsuario);
+    setNome(dadosUsuario.nome)
+    setIdade(dadosUsuario.idade)
   };
   return (
     <div>
       <h3>Pai</h3>
-      <p>Dados Recebidos do Componente Filho: {dadosUsuario}</p>
+      <p>Dados Recebidos do Componente Filho: </p>
+      {nome} - {idade}
       <IndiretaFilho quandoClicar={fornecerInformacoesDoUsuario} />
     </div>
   );
