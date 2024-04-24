@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import IndiretaFilho from "./IndiretaFilho";
 import { IDadosUsuario } from "../../interfaces/basicos-interface/basico";
 
-const IndiretaPai = props => {
-  const [nome, setNome]= useState<string>("")
-  const [idade, setIdade]= useState<string>("")
+const IndiretaPai = () => {
+  const [nome, setNome] = useState<string>("");
+  const [idade, setIdade] = useState<string>("");
 
   const fornecerInformacoesDoUsuario = (dadosUsuario: IDadosUsuario) => {
-    setNome(dadosUsuario.nome)
-    setIdade(dadosUsuario.idade)
+    setNome(dadosUsuario.nome ?? "");
+    setIdade(dadosUsuario.idade ?? "");
   };
   return (
     <div>
