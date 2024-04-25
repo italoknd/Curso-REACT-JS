@@ -10,10 +10,18 @@ import ListaProdutos from "./components/repeticao/ListaProdutos";
 import ParOuImpar from "./components/condicionais/ParOuImpar.jsx";
 import ChildrenRender from "./components/condicionais/ChildrenRender.jsx";
 import IndiretaPai from "./components/comunicacao/IndiretaPai.jsx";
+import Input from "./components/form/Input.jsx";
+import Contador from "./components/contador/Contador.jsx";
 
 function App() {
   return (
     <div className="cards-container">
+      <Card titulo="Componente Baseado Em Classe" color="#2b8">
+        <Contador numero={2}/>
+      </Card>
+      <Card titulo="Componente Controlado" color="#b26">
+        <Input />
+      </Card>
       <Card titulo="Comunicação Indireta" color="#b91">
         <IndiretaPai />
       </Card>
