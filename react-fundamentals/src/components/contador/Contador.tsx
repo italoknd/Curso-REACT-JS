@@ -1,4 +1,5 @@
 import React, { Component, ReactEventHandler } from "react";
+import "./contador.css";
 import { IContador } from "./interfaceContador";
 
 export default class Contador extends Component<IContador> {
@@ -58,9 +59,13 @@ export default class Contador extends Component<IContador> {
             />
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <button onClick={this.inc}>Add number</button>
-          <button onClick={this.dec}>Remove number</button>
+        <div>
+          <button className="control-button" onClick={this.inc}>
+            +
+          </button>
+          <button className="control-button" onClick={this.dec}>
+            -
+          </button>
         </div>
       </div>
     );
