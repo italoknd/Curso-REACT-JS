@@ -1,17 +1,17 @@
 import "./App.css";
 import Card from "./components/layout/Card";
-import Primeiro from "./components/basicos/Primeiro.jsx";
-import Props from "./components/basicos/Props.jsx";
-import NumeroAleatorio from "./components/basicos/NumeroAleatorio.jsx";
-import Familia from "./components/basicos/Familia.jsx";
-import FamiliaMembro from "./components/basicos/FamiliaMembro.jsx";
+import Primeiro from "./components/basicos/Primeiro";
+import Props from "./components/basicos/Props";
+import NumeroAleatorio from "./components/basicos/NumeroAleatorio";
+import Familia from "./components/basicos/Familia";
+import FamiliaMembro from "./components/basicos/FamiliaMembro";
 import ListaAlunos from "./components/repeticao/ListaAlunos";
 import ListaProdutos from "./components/repeticao/ListaProdutos";
-import ParOuImpar from "./components/condicionais/ParOuImpar.jsx";
-import ChildrenRender from "./components/condicionais/ChildrenRender.jsx";
-import IndiretaPai from "./components/comunicacao/IndiretaPai.jsx";
-import Input from "./components/form/Input.jsx";
-import Contador from "./components/contador/Contador.jsx";
+import ParOuImpar from "./components/condicionais/ParOuImpar";
+import ChildrenRender from "./components/condicionais/ChildrenRender";
+import IndiretaPai from "./components/comunicacao/IndiretaPai";
+import Input from "./components/form/Input";
+import Contador from "./components/contador/Contador";
 
 function App() {
   return (
