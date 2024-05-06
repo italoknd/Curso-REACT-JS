@@ -12,18 +12,30 @@ export default class Contador extends Component<IContador> {
   state = {
     numeroDisplay: 10,
     passoIncremento: 20,
-    passoDecremento: 10,
+    passoDecremento: 10
   };
 
   inc = () => {
     this.setState({
-      numeroDisplay: this.state.numeroDisplay + this.state.passoIncremento,
+      numeroDisplay: this.state.numeroDisplay + this.state.passoIncremento
     });
   };
 
   dec = () => {
     this.setState({
-      numeroDisplay: this.state.numeroDisplay - this.state.passoDecremento,
+      numeroDisplay: this.state.numeroDisplay - this.state.passoDecremento
+    });
+  };
+
+  inputValorInc = (valor: number) => {
+    this.setState({
+      passoIncremento: valor
+    });
+  };
+
+  inputValorDec = (valor: number) => {
+    this.setState({
+      passoDecremento: valor
     });
   };
 
@@ -31,7 +43,12 @@ export default class Contador extends Component<IContador> {
     return (
       <div>
         <Display numero={this.state.numeroDisplay} />
-        <FormContador />
+        <FormContador
+          passoIncremento={this.state.passoIncremento}
+          passoDecremento={this.state.passoDecremento}
+          setNovoValorInc={this.inputValorInc}
+          setNovoValorDec={this.inputValorDec}
+        />
         <Controles decrementar={this.dec} incrementar={this.inc} />
       </div>
     );
