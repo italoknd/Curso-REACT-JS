@@ -4,23 +4,27 @@ import { IContador } from "./interfaceContador";
 export default class FormContador extends Component<IContador> {
   state = {
     numero: this.props.numero,
-    passoIncremento: 0,
-    passoDecremento: 0,
+    passoIncremento: this.props.passoIncremento || 0,
+    passoDecremento: this.props.passoDecremento || 0
   };
 
-  inputValorInc: ReactEventHandler<HTMLInputElement> = (e) => {
+  inputValorInc: ReactEventHandler<HTMLInputElement> = e => {
     if (e.target instanceof HTMLInputElement) {
       this.setState({
-        passoIncremento: Number(e.target.value),
+        passoIncremento: Number(e.target.value)
       });
+
+      this.props.setNovoValorInc(Number(e.target.value));
     }
   };
 
-  inputValorDec: ReactEventHandler<HTMLInputElement> = (e) => {
+  inputValorDec: ReactEventHandler<HTMLInputElement> = e => {
     if (e.target instanceof HTMLInputElement) {
       this.setState({
-        passoDecremento: Number(e.target.value),
+        passoDecremento: Number(e.target.value)
       });
+
+      this.props.setNovoValorDec(Number(e.target.value));
     }
   };
 
