@@ -1,21 +1,24 @@
-const gerarNumeros = () => {
-  const numeros: number[] = Array(7)
+export const gerarNumeros = (qtd: number): number[] => {
+  const numeros: number[] = Array(qtd)
     .fill(0)
     .reduce((numeros: number[]) => {
       const novoNumero = gerarNumeroNaoContido(1, 60, numeros);
 
       return [...numeros, novoNumero];
-    }, []);
+    }, [])
+    .sort((n1: number, n2: number) => n2 - n1);
 
   return numeros;
 };
 
-const gerarNumeroNaoContido = (min: number, max: number, arr: number[]) => {
-  const aleatorio: number = parseInt(Math.random() * (max - min) + min);
+const gerarNumeroNaoContido = (
+  min: number,
+  max: number,
+  arr: number[]
+): number => {
+  const aleatorio: string = parseInt((Math.random()) * (max - min) + min);
 
   return arr.includes(aleatorio)
     ? gerarNumeroNaoContido(min, max, arr)
-    : gerarNumeros(aleatorio);
+    : aleatorio;
 };
-
-console.log(gerarNumeroNaoContido(1, 5, [1, 2, 3]));
