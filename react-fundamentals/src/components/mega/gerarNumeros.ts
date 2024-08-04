@@ -16,9 +16,9 @@ const gerarNumeroNaoContido = (
   max: number,
   arr: number[]
 ): number => {
-  const aleatorio: string = parseInt((Math.random()) * (max - min) + min);
+  const aleatorio: number = Math.floor(Math.random() * (max - min) + min);
 
-  return arr.includes(aleatorio)
+  return arr.includes(Number(aleatorio))
     ? gerarNumeroNaoContido(min, max, arr)
     : aleatorio;
 };
