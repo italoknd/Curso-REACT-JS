@@ -12,10 +12,14 @@ import ChildrenRender from "./components/condicionais/ChildrenRender";
 import IndiretaPai from "./components/comunicacao/IndiretaPai";
 import Input from "./components/form/Input";
 import Contador from "./components/contador/Contador";
+import Mega from "./components/mega/Mega";
 
 function App() {
   return (
     <div className="cards-container">
+      <Card titulo="Mega Sena" color="#21d">
+        <Mega qtd={6}/>
+      </Card>
       <Card titulo="Componente Baseado Em Classe" color="#2b8">
         <Contador numero={2}/>
       </Card>
