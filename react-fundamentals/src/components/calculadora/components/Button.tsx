@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./button.css";
-
-interface IButton {}
+import { IButton } from "../interface/index";
 
 export default function Button(props: IButton) {
-  return <button className="button">0</button>;
+  const getValueFromButton = (value: string) => {
+    setDisplayValue(Number(value))
+  };
+  const [displayValue, setDisplayValue] = useState<number>(0);
+
+  return (
+    <button className={`button ${props.labelClass}`} onClick={e=> }>{props.label}</button>
+  );
 }
