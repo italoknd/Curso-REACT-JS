@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 import "./calculadora.css";
 import Button from "./components/Button";
+import { buttons } from "./script/buttons";
+import Display from "./components/Display";
+import { IButton } from "./interface";
 
 export default class Calculdadora extends Component {
   render() {
     return (
       <div>
         <h2>Calculadora</h2>
+        <Display value={100} />
         <div className="calculadora">
-          <Button />
+          {buttons.map((button: IButton) => {
+            return (
+              <Button label={button.label} labelClass={button.labelClass} />
+            );
+          })}
         </div>
       </div>
     );
