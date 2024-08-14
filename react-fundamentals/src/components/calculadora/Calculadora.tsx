@@ -6,6 +6,16 @@ import Display from "./components/Display";
 import { IButton } from "./interface";
 
 export default class Calculdadora extends Component {
+  constructor(props: IButton) {
+    super(props);
+
+    this.getValue = this.getValue.bind(this);
+  }
+
+  getValue(value: string): void {
+    console.log(value);
+  }
+
   render() {
     return (
       <div>
@@ -14,7 +24,11 @@ export default class Calculdadora extends Component {
         <div className="calculadora">
           {buttons.map((button: IButton) => {
             return (
-              <Button label={button.label} labelClass={button.labelClass} />
+              <Button
+                label={button.label}
+                labelClass={button.labelClass}
+                getValue={this.getValue}
+              />
             );
           })}
         </div>
