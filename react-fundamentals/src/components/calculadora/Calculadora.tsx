@@ -12,15 +12,19 @@ export default class Calculdadora extends Component {
     this.getValue = this.getValue.bind(this);
   }
 
+  state = {
+    displayValue: 0,
+  };
+
   getValue(value: string): void {
-    console.log(value);
+    this.setState({ displayValue: value });
   }
 
   render() {
     return (
       <div>
         <h2>Calculadora</h2>
-        <Display value={100} />
+        <Display value={this.state.displayValue} />
         <div className="calculadora">
           {buttons.map((button: IButton, id: number) => {
             return (
