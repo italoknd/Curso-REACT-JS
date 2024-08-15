@@ -16,8 +16,23 @@ export default class Calculdadora extends Component {
     displayValue: 0,
   };
 
+  isNumber(value: any): boolean {
+    return /^\d+$/.test(value);
+  }
+
   getValue(value: string): void {
-    this.setState({ displayValue: value });
+    for (const element of buttons) {
+      if (this.isNumber(element.label)) {
+        console.log("ascasca");
+        this.setState({
+          displayValue: value,
+        });
+      } else if (element.label === "AC") {
+        this.setState({
+          displayValue: "0",
+        });
+      }
+    }
   }
 
   render() {
