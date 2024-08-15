@@ -22,9 +22,10 @@ export default class Calculdadora extends Component {
         <h2>Calculadora</h2>
         <Display value={100} />
         <div className="calculadora">
-          {buttons.map((button: IButton) => {
+          {buttons.map((button: IButton, id: number) => {
             return (
               <Button
+                key={id}
                 label={button.label}
                 labelClass={button.labelClass}
                 getValue={this.getValue}
