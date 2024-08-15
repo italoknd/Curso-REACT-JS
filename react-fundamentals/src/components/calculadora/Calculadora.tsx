@@ -12,26 +12,34 @@ export default class Calculdadora extends Component {
     this.getValue = this.getValue.bind(this);
   }
 
+  //states
   state = {
-    displayValue: 0,
+    displayValue: "0",
+    // value1: 0,
+    // value2: 0,
   };
 
-  isNumber(value: any): boolean {
+  //functions
+  isNumber(value: string): boolean {
     return /^\d+$/.test(value);
   }
 
   getValue(value: string): void {
-    for (const element of buttons) {
-      if (this.isNumber(element.label)) {
-        console.log("ascasca");
-        this.setState({
-          displayValue: value,
-        });
-      } else if (element.label === "AC") {
-        this.setState({
-          displayValue: "0",
-        });
+    if (this.isNumber(value)) {
+      if (this.state.displayValue.startsWith("0")) {
+        this.state.displayValue = "";
       }
+
+      this.setState({
+        displayValue: "".concat(this.state.displayValue, value),
+      });
+      // this.setState({
+      //   value1: this.state.value1 + value,
+      // });
+    } else if (value === "AC") {
+      // this.setState({
+      //   displayValue: "0",
+      // });
     }
   }
 

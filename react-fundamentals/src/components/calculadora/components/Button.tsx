@@ -6,7 +6,7 @@ export default function Button(props: IButton) {
   return (
     <button
       className={`button ${props.labelClass}`}
-      onClick={(e) => props.getValue(props.label)}
+      onClick={(e) => (props?.getValue ? props?.getValue(props.label) : 0)}
     >
       {props.label}
     </button>

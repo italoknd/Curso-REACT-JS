@@ -1,7 +1,7 @@
 import { IButton } from "../interface/index";
 
 export const buttons: IButton[] = [
-  { label: "AC", labelClass: "" },
+  { label: "AC", labelClass: "triple" },
   { label: "/", labelClass: "operation" },
   { label: "7", labelClass: "" },
   { label: "8", labelClass: "" },

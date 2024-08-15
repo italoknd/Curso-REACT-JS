@@ -2,7 +2,7 @@ import React from "react";
 import "./display.css"
 
 interface IDisplayValue {
-  value: number;
+  value: string;
 }
 
 const Display = (props: IDisplayValue) => {
