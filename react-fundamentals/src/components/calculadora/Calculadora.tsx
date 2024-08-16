@@ -3,7 +3,7 @@ import "./calculadora.css";
 import Button from "./components/Button";
 import { buttons } from "./script/buttons";
 import Display from "./components/Display";
-import { IButton } from "./interface";
+import { IButton, ICalculatorState } from "./interface";
 
 export default class Calculdadora extends Component {
   constructor(props: IButton) {
@@ -13,10 +13,11 @@ export default class Calculdadora extends Component {
   }
 
   //states
-  state = {
+  state: ICalculatorState = {
     displayValue: "0",
-    // value1: 0,
-    // value2: 0,
+    operationType: "",
+    value1: 0,
+    value2: 0,
   };
 
   //functions
@@ -33,14 +34,44 @@ export default class Calculdadora extends Component {
       this.setState({
         displayValue: "".concat(this.state.displayValue, value),
       });
-      // this.setState({
-      //   value1: this.state.value1 + value,
-      // });
     } else if (value === "AC") {
-      // this.setState({
-      //   displayValue: "0",
-      // });
+      this.setState({
+        displayValue: "0",
+        value1: 0,
+        value2: 0,
+        operationType: "",
+      });
+    } else if (value === "+") {
+      this.setState({ operationType: value });
+      if (!this.state.value1) {
+        this.setState({ value1: this.state.displayValue });
+      } else {
+        this.setState({ value2: this.state.displayValue });
+      }
+
+      this.setState({ displayValue: "0" });
+    } else if (value === "=") {
+      const result: string = this.getResult(this.state.displayValue);
+      this.setState({ displayValue: result, value1: result });
     }
+  }
+
+  getResult(value: string): string {
+    let result: number = 0;
+
+    if (this.state.operationType === "+") {
+      result = Number(this.state.value1) + Number(value);
+    } else if (this.state.operationType === "-") {
+      result = Number(this.state.value1) - Number(this.state.value2);
+    } else if (this.state.operationType === "*") {
+      result = Number(this.state.value1) * Number(this.state.value2);
+    } else if (this.state.operationType === "/") {
+      result = Number(this.state.value1) / Number(this.state.value2);
+    }
+
+    console.log(result);
+
+    return String(result);
   }
 
   render() {
