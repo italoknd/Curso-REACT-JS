@@ -27,27 +27,12 @@ export default class Calculdadora extends Component {
 
   getValue(value: string): void {
     if (this.isNumber(value)) {
-      if (this.state.displayValue.startsWith("0")) {
-        this.state.displayValue = "";
-      }
-
-      this.setState({
-        displayValue: "".concat(this.state.displayValue, value),
-      });
+      this.addDigitToDisplay(value);
     } else if (value === "AC") {
-      this.setState({
-        displayValue: "0",
-        value1: 0,
-        value2: 0,
-        operationType: "",
-      });
+      this.clearMemory();
     } else if (value === "+") {
       this.setState({ operationType: value });
-      if (!this.state.value1) {
-        this.setState({ value1: this.state.displayValue });
-      } else {
-        this.setState({ value2: this.state.displayValue });
-      }
+      this.separateValues();
 
       this.setState({ displayValue: "0" });
     } else if (value === "=") {
@@ -69,9 +54,40 @@ export default class Calculdadora extends Component {
       result = Number(this.state.value1) / Number(this.state.value2);
     }
 
-    console.log(result);
-
     return String(result);
+  }
+
+  addDigitToDisplay(value: string) {
+    this.startsWithZero(); //CLEAR THE DISPLAY IF INITIAL DIGIT IS 0
+
+    this.setState({
+      displayValue: "".concat(this.state.displayValue, value),
+    });
+  }
+
+  //VALIDATIONS
+  startsWithZero() {
+    if (this.state.displayValue.startsWith("0")) {
+      this.state.displayValue = "";
+    }
+  }
+
+  //OTHER FUNCTIONS
+  separateValues() {
+    if (!this.state.value1) {
+      this.setState({ value1: this.state.displayValue });
+    } else {
+      this.setState({ value2: this.state.displayValue });
+    }
+  }
+
+  clearMemory() {
+    this.setState({
+      displayValue: "0",
+      value1: 0,
+      value2: 0,
+      operationType: "",
+    });
   }
 
   render() {
