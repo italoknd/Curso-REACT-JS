@@ -1,5 +1,5 @@
 import Pratica from "../components/Praticas";
-import Calculdadora from "../components/calculadora/Calculadora";
+import Calculdadora from "../components/calculadora/Calculator";
 
 import { createBrowserRouter } from "react-router-dom";
 

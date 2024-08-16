@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./calculadora.css";
+import "./calculator.css";
 import Button from "./components/Button";
 import { buttons } from "./script/buttons";
 import Display from "./components/Display";
@@ -17,24 +17,16 @@ export default class Calculdadora extends Component {
     displayValue: "0",
     operationType: "",
     value1: 0,
-    value2: 0,
   };
 
-  //functions
-  isNumber(value: string): boolean {
-    return /^\d+$/.test(value);
-  }
-
+  //FUNCTIONS
   getValue(value: string): void {
     if (this.isNumber(value)) {
       this.addDigitToDisplay(value);
     } else if (value === "AC") {
       this.clearMemory();
-    } else if (value === "+") {
-      this.setState({ operationType: value });
-      this.separateValues();
-
-      this.setState({ displayValue: "0" });
+    } else if (!this.isNumber(value) && value !== "AC" && value !== "=") {
+      this.prepareOperation(value);
     } else if (value === "=") {
       const result: string = this.getResult(this.state.displayValue);
       this.setState({ displayValue: result, value1: result });
@@ -43,15 +35,14 @@ export default class Calculdadora extends Component {
 
   getResult(value: string): string {
     let result: number = 0;
-
     if (this.state.operationType === "+") {
       result = Number(this.state.value1) + Number(value);
     } else if (this.state.operationType === "-") {
-      result = Number(this.state.value1) - Number(this.state.value2);
+      result = Number(this.state.value1) - Number(value);
     } else if (this.state.operationType === "*") {
-      result = Number(this.state.value1) * Number(this.state.value2);
+      result = Number(this.state.value1) * Number(value);
     } else if (this.state.operationType === "/") {
-      result = Number(this.state.value1) / Number(this.state.value2);
+      result = Number(this.state.value1) / Number(value);
     }
 
     return String(result);
@@ -72,20 +63,21 @@ export default class Calculdadora extends Component {
     }
   }
 
+  isNumber(value: string): boolean {
+    return /^\d+$/.test(value);
+  }
+
   //OTHER FUNCTIONS
-  separateValues() {
-    if (!this.state.value1) {
-      this.setState({ value1: this.state.displayValue });
-    } else {
-      this.setState({ value2: this.state.displayValue });
-    }
+  prepareOperation(value: string) {
+    this.setState({ operationType: value });
+    this.setState({ value1: this.state.displayValue });
+    this.setState({ displayValue: "0" });
   }
 
   clearMemory() {
     this.setState({
       displayValue: "0",
       value1: 0,
-      value2: 0,
       operationType: "",
     });
   }
@@ -93,7 +85,7 @@ export default class Calculdadora extends Component {
   render() {
     return (
       <div>
-        <h2>Calculadora</h2>
+        <h2>Calculator</h2>
         <Display value={this.state.displayValue} />
         <div className="calculadora">
           {buttons.map((button: IButton, id: number) => {
