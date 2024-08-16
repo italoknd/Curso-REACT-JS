@@ -12,7 +12,6 @@ export default class Calculdadora extends Component {
     this.getValue = this.getValue.bind(this);
   }
 
-  //states
   state: ICalculatorState = {
     displayValue: "0",
     operationType: "",
@@ -20,8 +19,10 @@ export default class Calculdadora extends Component {
   };
 
   //FUNCTIONS
+
+  //GETTERS
   getValue(value: string): void {
-    if (this.isNumber(value)) {
+    if (this.isNumber(value) || value === ".") {
       this.addDigitToDisplay(value);
     } else if (value === "AC") {
       this.clearMemory();
@@ -48,14 +49,6 @@ export default class Calculdadora extends Component {
     return String(result);
   }
 
-  addDigitToDisplay(value: string) {
-    this.startsWithZero(); //CLEAR THE DISPLAY IF INITIAL DIGIT IS 0
-
-    this.setState({
-      displayValue: "".concat(this.state.displayValue, value),
-    });
-  }
-
   //VALIDATIONS
   startsWithZero() {
     if (this.state.displayValue.startsWith("0")) {
@@ -69,9 +62,11 @@ export default class Calculdadora extends Component {
 
   //OTHER FUNCTIONS
   prepareOperation(value: string) {
-    this.setState({ operationType: value });
-    this.setState({ value1: this.state.displayValue });
-    this.setState({ displayValue: "0" });
+    this.setState({
+      operationType: value,
+      value1: this.state.displayValue,
+      displayValue: "0",
+    });
   }
 
   clearMemory() {
@@ -79,6 +74,14 @@ export default class Calculdadora extends Component {
       displayValue: "0",
       value1: 0,
       operationType: "",
+    });
+  }
+
+  addDigitToDisplay(value: string) {
+    this.startsWithZero(); //CLEAR THE DISPLAY IF INITIAL DIGIT IS 0
+
+    this.setState({
+      displayValue: "".concat(this.state.displayValue, value),
     });
   }
 
