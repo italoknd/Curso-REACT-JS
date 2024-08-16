@@ -8,5 +8,4 @@ export interface ICalculatorState {
   displayValue: string;
   operationType: string;
   value1: number;
-  value2: number;
 }
