@@ -2,10 +2,18 @@
     background-color: #0004;
     color: #888;
     grid-column: span 4;
-
+    border-radius: 5px 5px 0px 0px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 20px;
+}
+
+.result {
+    width: 215px;
+    padding: 10px;
     font-size: 2em;
+    overflow-x: hidden;
+    white-space: nowrap;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
 }

@@ -1,7 +1,7 @@
 .calculadora {
-  height: 320px;
+  height: 215px;
   width: 235px;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   overflow: hidden;
   background-color: rgb(227, 224, 177);
   display: grid;
