@@ -15,7 +15,7 @@ export default class Calculdadora extends Component {
   state: ICalculatorState = {
     displayValue: "0",
     operationType: "",
-    value1: 0,
+    value: 0,
   };
 
   //FUNCTIONS
@@ -30,20 +30,20 @@ export default class Calculdadora extends Component {
       this.prepareOperation(value);
     } else if (value === "=") {
       const result: string = this.getResult(this.state.displayValue);
-      this.setState({ displayValue: result, value1: result });
+      this.setState({ displayValue: result, value: result });
     }
   }
 
   getResult(value: string): string {
     let result: number = 0;
     if (this.state.operationType === "+") {
-      result = Number(this.state.value1) + Number(value);
+      result = Number(this.state.value) + Number(value);
     } else if (this.state.operationType === "-") {
-      result = Number(this.state.value1) - Number(value);
+      result = Number(this.state.value) - Number(value);
     } else if (this.state.operationType === "*") {
-      result = Number(this.state.value1) * Number(value);
+      result = Number(this.state.value) * Number(value);
     } else if (this.state.operationType === "/") {
-      result = Number(this.state.value1) / Number(value);
+      result = Number(this.state.value) / Number(value);
     }
 
     return String(result);
@@ -64,7 +64,7 @@ export default class Calculdadora extends Component {
   prepareOperation(value: string) {
     this.setState({
       operationType: value,
-      value1: this.state.displayValue,
+      value: this.state.displayValue,
       displayValue: "0",
     });
   }
@@ -72,7 +72,7 @@ export default class Calculdadora extends Component {
   clearMemory() {
     this.setState({
       displayValue: "0",
-      value1: 0,
+      value: 0,
       operationType: "",
     });
   }

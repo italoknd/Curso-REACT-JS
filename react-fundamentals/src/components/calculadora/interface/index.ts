@@ -7,5 +7,5 @@ export interface IButton {
 export interface ICalculatorState {
   displayValue: string;
   operationType: string;
-  value1: number;
+  value: number;
 }
