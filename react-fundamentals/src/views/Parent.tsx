@@ -1,13 +1,16 @@
 import React from "react";
 import Menu from "../components/layout/Menu";
 import Content from "../components/layout/Content";
-import './parent.css'
+import "./parent.css";
+import { BrowserRouter } from "react-router-dom";
 
 const Parent = () => {
   return (
     <div className="parent">
-      <Menu/>
-      <Content/>
+      <BrowserRouter>
+        <Menu />
+        <Content />
+      </BrowserRouter>
     </div>
   );
 };
