@@ -4,13 +4,14 @@ import "./profiles.css";
 
 export default function Profiles() {
   const profiles: number[] = [1, 2, 3, 4, 5];
+
   return (
     <div className="profiles">
       {profiles.map((profile: number) => {
         return (
           <div key={profile}>
             <h2>
-              <Link to={`/${profile}`}>Profile {profile}</Link>
+              <Link to={`/profiles/${profile}`}>Profile {profile}</Link>
             </h2>
           </div>
         );
