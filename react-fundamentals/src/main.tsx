@@ -2,20 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
 import { router } from "./router";
+import store from "./store";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
-
-// const rootEl = document.querySelector("#root");
-// const content: string = "Hey there! I'm using react!";
-
-// ReactDOM.createRoot(rootEl).render(
-//   <React.StrictMode>
-//     <div>{content}</div>
-//   </React.StrictMode>
-// );
