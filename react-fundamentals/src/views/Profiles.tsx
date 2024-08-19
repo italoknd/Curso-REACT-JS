@@ -1,21 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./profiles.css";
+import { profiles } from "../data/profiles";
+import { IProfile } from "../interfaces/basicos-interface/profiles";
 
 export default function Profiles() {
-  const profiles: number[] = [1, 2, 3, 4, 5];
-
   return (
-    <div className="profiles">
-      {profiles.map((profile: number) => {
-        return (
-          <div key={profile}>
-            <h2>
-              <Link to={`/profiles/${profile}`}>Profile {profile}</Link>
-            </h2>
-          </div>
-        );
-      })}
+    <div className="main-container">
+      <aside className="menu">
+        {profiles.map((profile: IProfile) => {
+          return (
+            <nav key={profile.profileId}>
+              <ul>
+                <li>
+                  <Link to={`/profiles/${profile.profileId}`}>
+                    Profile {profile.profileId}
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          );
+        })}
+      </aside>
+      <div className="children">
+        <Outlet />
+      </div>
     </div>
   );
 }
