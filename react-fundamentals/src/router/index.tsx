@@ -24,9 +24,11 @@ export const router = createBrowserRouter([
   {
     path: "/profiles",
     element: <Profiles />,
-  },
-  {
-    path: "/profiles/:profile",
-    element: <Profile />,
+    children: [
+      {
+        path: "/profiles/:profile",
+        element: <Profile />,
+      },
+    ],
   },
 ]);
