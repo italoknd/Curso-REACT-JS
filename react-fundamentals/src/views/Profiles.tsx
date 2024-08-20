@@ -3,8 +3,12 @@ import { Link, Outlet } from "react-router-dom";
 import "./profiles.css";
 import { profiles } from "../data/profiles";
 import { IProfile } from "../interfaces/basicos-interface/profiles";
+import { useDispatch } from "react-redux";
+import { sendProfileData } from "../store/profile";
 
 export default function Profiles() {
+  const dispatch = useDispatch();
+
   return (
     <div className="main-container">
       <aside className="menu">
@@ -12,7 +16,7 @@ export default function Profiles() {
           return (
             <nav key={profile.profileId}>
               <ul>
-                <li>
+                <li onClick={(e) => dispatch(sendProfileData(profile))}>
                   <Link to={`/profiles/${profile.profileId}`}>
                     Profile {profile.profileId}
                   </Link>
