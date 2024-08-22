@@ -35,6 +35,10 @@
   background-color: #00000030;
 }
 
+.selected-link {
+  text-decoration: underline;
+}
+
 .children {
   margin: auto;
 }

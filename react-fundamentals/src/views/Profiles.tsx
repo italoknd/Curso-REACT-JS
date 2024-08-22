@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import "./profiles.css";
 import { profiles } from "../data/profiles";
 import { IProfile } from "../interfaces/basicos-interface/profiles";
@@ -17,9 +17,12 @@ export default function Profiles() {
             <nav key={profile.profileId}>
               <ul>
                 <li onClick={(e) => dispatch(sendProfileData(profile))}>
-                  <Link to={`/profiles/${profile.profileId}`}>
+                  <NavLink
+                    className={(isActive) => (isActive ? "selected-link" : "")}
+                    to={`/profiles/${profile.profileId}`}
+                  >
                     Profile {profile.profileId}
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
