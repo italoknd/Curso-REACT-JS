@@ -5,6 +5,10 @@ import Profile from "../views/Profile";
 import Profiles from "../views/Profiles";
 import NotFound from "../components/NotFoundPage";
 
+//hooks and it's childs
+import Hooks from "../views/Hooks";
+import UseState from "../components/hooks/UseState";
+
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -20,6 +24,16 @@ export const router = createBrowserRouter([
   {
     path: "/navigation-example",
     element: <Parent />,
+  },
+  {
+    path: "/hooks",
+    element: <Hooks />,
+    children: [
+      {
+        path: "/hooks/use-state",
+        element: <UseState />,
+      },
+    ],
   },
   {
     path: "/profiles",
