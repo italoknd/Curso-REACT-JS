@@ -7,7 +7,7 @@ interface ISection {
 export default function SectionTitle(props: ISection) {
   return (
     <div>
-      <h2>{props.title}</h2>
+      <h2 style={{ color: "white" }}>{props.title}</h2>
     </div>
   );
 }

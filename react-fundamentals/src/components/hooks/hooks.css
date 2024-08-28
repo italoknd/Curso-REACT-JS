@@ -1,0 +1,15 @@
+.main-container-hooks,
+.main-container-hooks > h2 {
+  color: white;
+}
+
+.info {
+  padding: 15px;
+  background-color: white;
+  border-left: 6px solid rgb(46, 223, 61);
+}
+
+.exercise-box {
+  color: white;
+  border-radius: 1.5px solid white;
+}
