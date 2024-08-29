@@ -9,7 +9,23 @@
   border-left: 6px solid rgb(46, 223, 61);
 }
 
+.info > h2 {
+  text-align: center;
+}
+
 .exercise-box {
   color: white;
   border-radius: 1.5px solid white;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview {
+  padding: 10px;
+  background-color: white;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.425);
 }

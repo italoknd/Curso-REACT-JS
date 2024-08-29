@@ -9,10 +9,10 @@ export default function UseState() {
   return (
     <div className="main-container-hooks">
       <div className="info">
-        <h2>useState</h2>
+        <h2>useEffect</h2>
       </div>
       <div className="preview">
-        <p>Serve para trabalhar com estados em variáveis</p>
+        <p>Permite executar efeitos colaterais em componentes funcionais.</p>
       </div>
 
       <SectionTitle title="Exercício 01" />
