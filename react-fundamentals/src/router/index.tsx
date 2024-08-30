@@ -8,6 +8,7 @@ import NotFound from "../components/NotFoundPage";
 //hooks and it's childs
 import Hooks from "../views/Hooks";
 import UseState from "../components/hooks/UseState";
+import UseEffect from "../components/hooks/UseEffect";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/hooks/use-state",
         element: <UseState />,
+      },
+      {
+        path: "/hooks/use-effect",
+        element: <UseEffect />,
       },
     ],
   },
