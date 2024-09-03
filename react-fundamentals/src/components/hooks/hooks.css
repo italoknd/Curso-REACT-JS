@@ -29,3 +29,15 @@
   background-color: white;
   border-top: 1.5px solid rgba(0, 0, 0, 0.425);
 }
+
+.flex {
+  display: "flex";
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.color-white {
+  color: white;
+}
