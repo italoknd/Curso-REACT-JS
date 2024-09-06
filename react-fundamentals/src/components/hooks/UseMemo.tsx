@@ -3,7 +3,7 @@ import SectionTitle from "../layout/SectionTitle";
 import "./hooks.css";
 
 const sum = (value1: number, value2: number): number => {
-  while (Date.now() < Date.now() + 2000) {}
+//   while (Date.now() < Date.now() + 2000) {}
   return value1 + value2;
 };
 
