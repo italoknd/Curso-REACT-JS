@@ -11,6 +11,7 @@ import UseState from "../components/hooks/UseState";
 import UseEffect from "../components/hooks/UseEffect";
 import UseRef from "../components/hooks/UseRef";
 import UseMemo from "../components/hooks/UseMemo";
+import UseCallback from "../components/hooks/UseCallback";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/hooks/use-memo",
         element: <UseMemo />,
+      },
+      {
+        path: "/hooks/use-callback",
+        element: <UseCallback />,
       },
     ],
   },
