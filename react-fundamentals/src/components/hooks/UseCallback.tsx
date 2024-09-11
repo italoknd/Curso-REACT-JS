@@ -20,6 +20,7 @@ export default function UseCallback() {
       </div>
       <div className="preview">
         <p>Retorna uma função memoizada.</p>
+        <p>Recomendado usar sempre que for passar funções via props.</p>
       </div>
 
       <br />
