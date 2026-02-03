@@ -4,6 +4,7 @@ import Parent from "../views/Parent";
 import Profile from "../views/Profile";
 import Profiles from "../views/Profiles";
 import NotFound from "../components/NotFoundPage";
+import Chatbot from "../views/Chatbot";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -11,6 +12,11 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Pratica />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/chatbot",
+    element: <Chatbot />,
     errorElement: <NotFound />,
   },
   {

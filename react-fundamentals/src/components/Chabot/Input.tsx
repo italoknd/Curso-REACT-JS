@@ -1,0 +1,42 @@
+const Input = () => {
+  return (
+    <div className="w-full max-w-3xl mx-auto">
+      <div className="flex items-end gap-2 rounded-2xl border border-slate-800 bg-slate-900/70 backdrop-blur px-3 py-3 shadow-lg">
+        {/* Input */}
+        <textarea
+          placeholder="Digite sua mensagem..."
+          className="flex-1 resize-none rounded-xl border border-slate-800 bg-slate-950/50 px-4 py-3 text-sm text-slate-100
+                     placeholder:text-slate-400 h-12 overflow-y-auto
+                     focus:outline-none focus:ring-2 focus:ring-indigo-500/60 focus:border-indigo-500/40
+                     disabled:opacity-60"
+        />
+
+        {/* Botão enviar */}
+        <button
+          className="h-11 w-11 shrink-0 rounded-xl bg-indigo-600 text-white
+                     hover:bg-indigo-500 active:scale-[0.97] transition
+                     disabled:opacity-40 disabled:cursor-not-allowed
+                     focus:outline-none focus:ring-2 focus:ring-indigo-500/60"
+          aria-label="Enviar mensagem"
+        >
+          {/* Ícone avião */}
+          <svg className="mx-auto h-5 w-5" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12l18-9-6 9 6 9-18-9z"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Hint */}
+      <p className="mt-2 text-center text-xs text-slate-500">
+        Enter para enviar • Shift + Enter para quebrar linha
+      </p>
+    </div>
+  );
+};
+
+export default Input;
