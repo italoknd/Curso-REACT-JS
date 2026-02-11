@@ -5,6 +5,7 @@ import Profile from "../views/Profile";
 import Profiles from "../views/Profiles";
 import NotFound from "../components/NotFoundPage";
 import Chatbot from "../views/Chatbot";
+import PropsExercises from "../components/PropsExercises";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -17,6 +18,16 @@ export const router = createBrowserRouter([
   {
     path: "/chatbot",
     element: <Chatbot />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/chatbot",
+    element: <Chatbot />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/props-exercises",
+    element: <PropsExercises />,
     errorElement: <NotFound />,
   },
   {

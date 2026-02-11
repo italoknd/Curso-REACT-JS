@@ -1,5 +1,3 @@
-import React from "react";
-
 import "../App.css";
 import Card from "./layout/Card";
 import Primeiro from "./basicos/Primeiro";
@@ -16,7 +14,7 @@ import Input from "./form/Input";
 import Contador from "./contador/Contador";
 import Mega from "./mega/Mega";
 
-export default function Pratica() {
+export default function PropsExercises() {
   return (
     <div className="cards-container">
       <Card titulo="Mega Sena" color="#21d">
