@@ -1,42 +1,14 @@
 type ChatMessage = {
-  id: string;
+  id: number;
   role: "user" | "assistant";
   content: string;
   time?: string;
 };
 
-const mockMessages: ChatMessage[] = [
-  {
-    id: "1",
-    role: "assistant",
-    content: "Olá! Como posso te ajudar hoje?",
-    time: "19:01",
-  },
-  {
-    id: "2",
-    role: "user",
-    content: "Quero montar um layout de chat moderno com Tailwind.",
-    time: "19:02",
-  },
-  {
-    id: "3",
-    role: "assistant",
-    content:
-      "Perfeito. Posso te entregar um layout completo com bolhas, input e sidebar.",
-    time: "19:03",
-  },
-  {
-    id: "4",
-    role: "user",
-    content: "Por enquanto só o chat principal, sem lógica.",
-    time: "19:04",
-  },
-];
-
-const Messages = ({ message }: { message: string }) => {
+const Messages = ({ messages }: { messages: ChatMessage[] }) => {
   return (
     <div className="flex-1 overflow-y-auto">
-      <h1>{message} </h1>
+      <h1>Hello, how can I help you today? </h1>
       <div className="mx-auto w-full max-w-3xl px-4 py-6 space-y-4">
         {/* Separator */}
         <div className="flex items-center gap-3 py-2">
@@ -45,7 +17,7 @@ const Messages = ({ message }: { message: string }) => {
           <div className="h-px flex-1 bg-slate-800" />
         </div>
 
-        {mockMessages.map((m) => (
+        {messages.map((m) => (
           <div
             key={m.id}
             className={`flex ${
